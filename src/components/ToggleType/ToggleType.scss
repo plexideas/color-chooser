@@ -1,0 +1,26 @@
+.toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: hsl(0, 0%, 20%);
+  justify-content: space-between;
+  width: 4rem;
+  padding: 5px;
+
+  font-size: .5rem;
+
+  cursor: pointer;
+}
+
+.toggler {
+  position: absolute;
+  height: 1.3rem;
+  width: 1.3rem;
+  background-color: #f2f2f2;
+}
+
+.hide {
+  display: none;
+}
