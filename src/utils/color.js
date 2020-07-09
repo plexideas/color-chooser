@@ -17,6 +17,10 @@ export const getColorWeight = (color) => {
   return color.reduce((a, b) => a + b)
 }
 
-export const rgbToHex = (r, g, b) => {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+export const getRGBColor = (color) => {
+  return `rgb(${color[0]}, ${color[1]}, ${color[2]})`
+}
+
+export const getHexColor = (color) => {
+  return "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getRandomColor, getColorWeight, rgbToHex } from '../utils/color'
+import { getRandomColor, getColorWeight, getHexColor, getRGBColor } from '../utils/color'
 
 import './App.scss';
 import ToggleType from './ToggleType/ToggleType';
@@ -19,7 +19,7 @@ const App = () => {
   }
 
   const onBtnClickHandler = (event) => {
-    const copyText = document.getElementById("colorChooserBtn");
+    const copyText = document.getElementById("color-code");
     const textArea = document.createElement("textarea");
     textArea.value = copyText.innerHTML;
     document.body.appendChild(textArea);
@@ -34,10 +34,6 @@ const App = () => {
   const onToggleHanlder = () => {
     setIsCopied(false); 
     setIsRGB(!isRGB);
-  } 
-
-  const getRGBColor = (color) => {
-    return `rgb(${color[0]}, ${color[1]}, ${color[2]})`
   }
 
   useEffect(() => {
@@ -45,7 +41,7 @@ const App = () => {
       backgroundColor: getRGBColor(color),
     }
     console.log(color);
-    document.bgColor = rgbToHex(...color);
+    document.bgColor = getHexColor(color);
   })
 
   return (
@@ -59,7 +55,7 @@ const App = () => {
         className="color-chooser--button" 
         onClick={onBtnClickHandler}
       >
-        { isRGB ? getRGBColor(color) : rgbToHex(...color) }
+        <div id="color-code">{ isRGB ? getRGBColor(color) : getHexColor(color) }</div>
         <p className="color-chooser--copy">{ isCopied ? 'Copied!' : 'Click to copy!' }</p>
       </button>
       <div className={`color-chooser--copy ${getColorWeight(color) < 300 ? 'invert' : ''}`}>
