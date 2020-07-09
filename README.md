@@ -1,11 +1,8 @@
-<div style="display: flex;">
 <img src="logo.png"
-     alt="Markdown Monster icon"
-     style="margin-right: 30px; width: 128px" /> 
+               alt="Markdown Monster icon"
+               style="margin-right: 30px;"  width="128px" />
 
 # Color Chooser App (PWA) [Demo](https://distracted-heisenberg-3ebfb7.netlify.app)
-
-</div>
 
 ## Stack:
 React + GSAP
