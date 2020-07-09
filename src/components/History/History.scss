@@ -1,0 +1,40 @@
+.history {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  background-color: #323232;
+
+  @media(max-width: 768px) {
+    top: unset;
+    right: unset;
+    display: flex;
+    bottom: 0px;
+    width: 100%;
+
+    overflow-x: scroll;
+  }
+}
+
+.history-item {
+  height: 3rem;
+  width: 3rem;
+  margin: 5px;
+  
+  cursor: pointer;
+  
+  @media(max-width: 768px) {
+    margin: 5px 2px;
+
+    &:last-child {
+      margin-right: 5px;
+    }
+    &:first-child {
+      margin-left: 5px;
+    }
+
+    height: 4rem;
+    width: 100%;
+    min-width: 4rem;
+  }
+}
